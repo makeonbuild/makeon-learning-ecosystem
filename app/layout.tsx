@@ -13,13 +13,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Makeon | Builder-Learning Ecosystem",
-  description: "Makeon is India’s builder-learning ecosystem: structured academic learning through making, evidence and visible confidence.",
-  keywords: ["Makeon", "builder learning", "hands-on learning", "math and science", "learning centres", "schools", "portfolio evidence"],
+  title: "Makeon | Builder Development Infrastructure",
+  description: "Makeon is India’s builder development infrastructure: structured academic learning through making, evidence and visible confidence.",
+  keywords: ["Makeon", "builder development infrastructure", "hands-on learning", "math and science", "learning centres", "schools", "portfolio evidence"],
   openGraph: {
-    title: "Makeon | Builder-Learning Ecosystem",
+    title: "Makeon | Builder Development Infrastructure",
     description: "Think. Make. Build the future.",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Makeon | Builder Development Infrastructure",
+    description: "Think. Make. Build the future.",
   },
   other: {
     "codex-preview": "development",

@@ -1431,32 +1431,37 @@ h2 {
 
 .partners strong { color: var(--makeon-red); }
 
-.partners > div {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.partners span {
-  display: grid;
-  place-items: center;
-  min-height: 150px;
+.partners .collab-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 34px 4vw;
   border-left: 1px solid var(--line);
+  background: rgba(255, 255, 255, .74);
+  width: 100%;
+}
+
+.collab-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.collab-item h3 {
   color: var(--deep-navy);
-  font-size: clamp(30px, 4vw, 54px);
+  font-size: 24px;
   font-weight: 800;
-  letter-spacing: -.04em;
+  letter-spacing: -.02em;
+  margin: 0;
 }
 
-.partners span:first-child {
-  font-weight: 500;
-  letter-spacing: -.06em;
-  text-transform: lowercase;
-}
-
-.partners span:last-child {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 900;
-  text-transform: uppercase;
+.collab-item p {
+  color: var(--navy-body);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 680px;
 }
 
 .faq {
@@ -1743,8 +1748,8 @@ footer small {
   .values-strip { grid-template-columns: 1fr; gap: 24px; }
   .evidence-layout { grid-template-columns: 1fr; }
   .values-grid, .adoption-table, .evidence-grid { grid-template-columns: 1fr 1fr; }
-  .partners > div { grid-template-columns: 1fr; }
-  .partners span { border-left: 0; border-top: 1px solid var(--line); }
+  .partners { grid-template-columns: 1fr; }
+  .partners .collab-list { border-left: 0; border-top: 1px solid var(--line); }
   .pathway-intro, .room-wall, .student-photo-panel { border-right: 0; border-bottom: 1px solid #41506a; }
   .programme-card { grid-template-columns: 52px 1fr; }
   .programme-detail, .programme-evidence { grid-column: 2 / -1; }

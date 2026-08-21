@@ -65,33 +65,24 @@ const values = [
 const programmes = [
   {
     level: "01",
-    name: "Foundation Studio",
-    range: "Ages 5–7",
-    promise: "A playful but disciplined introduction to patterns, structures, balance, measurement, materials and cause-and-effect thinking.",
-    learners: "Children who are beginning to notice how the physical world works.",
-    modules: ["Build-and-name vocabulary", "Shape, balance and measurement", "Observation journals", "Explain-back circles"],
-    evidence: "Learners create simple models and explain what changed when they adjusted material, shape, size or force.",
-  },
-  {
-    level: "02",
     name: "Builder Programme",
-    range: "Grades 6–8",
+    range: "Grades 6–9",
     promise: "Curriculum-connected building challenges that make mathematics and science visible through real-world tasks.",
     learners: "Students who need to move from memorising concepts to using them with confidence.",
     modules: ["Mechanisms and motion", "Structures and loads", "Electricity and control", "Measurement-led improvement"],
     evidence: "Learners submit a build record showing concept, design choice, test result, failure point and improvement.",
   },
   {
-    level: "03",
+    level: "02",
     name: "Applied Engineering Studio",
-    range: "Grades 9–12",
-    promise: "Longer design briefs where students practise systems thinking, documentation, iteration and technical communication.",
-    learners: "Older learners preparing for serious academic, technical and entrepreneurial pathways.",
-    modules: ["Design briefs", "Prototype cycles", "Systems and constraints", "Portfolio presentation"],
-    evidence: "Learners present a documented prototype and defend the decisions behind it using evidence.",
+    range: "Grade 11 only",
+    promise: "An intensive design and systems studio dedicated to Grade 11 learners—free from board year pressures—to practise engineering briefs, prototype cycles, systems thinking and technical documentation.",
+    learners: "Grade 11 students preparing for serious academic, technical and engineering pathways before their final board year.",
+    modules: ["Advanced design briefs", "Prototype iteration cycles", "Systems and constraints", "Portfolio & technical documentation"],
+    evidence: "Learners present a documented prototype and defend engineering decisions using evidence.",
   },
   {
-    level: "04",
+    level: "03",
     name: "Institution Studio",
     range: "Schools & learning centres",
     promise: "A structured implementation model for centres that want Makeon as a repeatable learning pathway, not an occasional workshop.",
@@ -125,7 +116,23 @@ const faqs = [
   ["Can schools adopt it inside the timetable?", "Yes, subject to local planning. Makeon can be shaped as a weekly studio, enrichment block, lab period, club or centre-based programme."],
 ];
 
-const partners = ["innointel", "Maker Nest"];
+const collaborations = [
+  {
+    name: "Innointel Global",
+    description: "Technical collaboration in product engineering, design and Academy course delivery.",
+    published: true,
+  },
+  {
+    name: "Rotary [Rotary Club Annanagar Aaditya]",
+    description: "Delivery collaboration bringing the makeon Builder Development curriculum into government schools and Rotary Interact schools.",
+    published: false,
+  },
+  {
+    name: "IIT Madras",
+    description: "Research collaboration conducting an independent impact study to assess and recommend pedagogy for hands-on building education in schools.",
+    published: false,
+  },
+];
 
 function LogoMark() {
   return (
@@ -175,7 +182,7 @@ export default function Home() {
     <main id="top">
       <div className="topline">
         <span>MAKEON</span>
-        <span>BUILDER-LEARNING ECOSYSTEM</span>
+        <span>BUILDER DEVELOPMENT INFRASTRUCTURE</span>
         <span>THINK. MAKE. BUILD THE FUTURE.</span>
       </div>
 
@@ -184,7 +191,7 @@ export default function Home() {
           <LogoMark />
           <span>
             <strong>MAKEON</strong>
-            <small>BUILDER-LEARNING ECOSYSTEM</small>
+            <small>BUILDER DEVELOPMENT INFRASTRUCTURE</small>
           </span>
         </a>
         <button className="menu-button" onClick={() => setMenu(!menu)} aria-expanded={menu} aria-controls="site-nav">
@@ -206,7 +213,7 @@ export default function Home() {
           <LogoMark />
         </div>
         <div className="hero-main">
-          <p className="overline">Builder-learning ecosystem</p>
+          <p className="overline">Builder development infrastructure</p>
           <h1>MAKEON</h1>
           <p className="hero-subtitle">Think. Make. Build the future.</p>
           <div className="red-rule" />
@@ -222,7 +229,7 @@ export default function Home() {
         <aside className="who-card" id="who">
           <p className="section-label">Who we are</p>
           <p>
-            Makeon is India’s builder-learning ecosystem. We partner with learning centres,
+            Makeon is India’s builder development infrastructure. We partner with learning centres,
             schools and families to help children understand concepts through hands-on building,
             purposeful projects and future-ready skills.
           </p>
@@ -315,7 +322,7 @@ export default function Home() {
           <h2>Build with AI and emerging technologies.</h2>
           <p>
             The philosophy of Makeon is “Build” with AI and emerging technologies.
-            Technology in STEM becomes meaningful when learners use it to think,
+            Technology becomes truly meaningful when learners use it to think,
             make, test, improve and explain what they have created.
           </p>
         </div>
@@ -379,7 +386,7 @@ export default function Home() {
           <p className="section-label">The learning space</p>
           <h2>A serious place for children to become capable.</h2>
           <p>
-            The Makeon environment should feel calm, focused and aspirational. It is not a noisy toy room or a decorative STEM corner. It is a studio where learners handle materials, ask precise questions and take pride in making something work.
+            The Makeon environment should feel calm, focused and aspirational. It is not a noisy toy room or a decorative display corner. It is a studio where learners handle materials, ask precise questions and take pride in making something work.
           </p>
           <ul>
             <li>Project tables for collaborative building</li>
@@ -461,9 +468,16 @@ export default function Home() {
       </section>
 
       <section className="partners" id="partners">
-        <p>Powered by our <strong>ecosystem partners</strong></p>
-        <div>
-          {partners.map((partner) => <span key={partner}>{partner}</span>)}
+        <p>Strategic <strong>collaborations</strong></p>
+        <div className="collab-list">
+          {collaborations
+            .filter((collab) => collab.published)
+            .map((collab) => (
+              <div key={collab.name} className="collab-item">
+                <h3>{collab.name}</h3>
+                <p>{collab.description}</p>
+              </div>
+            ))}
         </div>
       </section>
 
@@ -558,10 +572,9 @@ export default function Home() {
                 </label>
                 <label>Primary learner group
                   <select name="age">
-                    <option>Ages 5–7</option>
-                    <option>Grades 6–8</option>
-                    <option>Grades 9–12</option>
-                    <option>Mixed age groups</option>
+                    <option>Grades 6–9</option>
+                    <option>Grade 11</option>
+                    <option>Mixed</option>
                   </select>
                 </label>
               </>
@@ -598,19 +611,19 @@ export default function Home() {
             <LogoMark />
             <span>
               <strong>MAKEON</strong>
-              <small>BUILDER-LEARNING ECOSYSTEM</small>
+              <small>BUILDER DEVELOPMENT INFRASTRUCTURE</small>
             </span>
           </a>
-          <p>We build Builder Ecosystems that empower learners, strengthen institutions and transform communities.</p>
+          <p>We build builder development infrastructure that empowers learners, strengthens institutions and transforms communities.</p>
           <strong className="footer-line">Building the next generation of builders.</strong>
         </div>
         <nav aria-label="Footer navigation">
           <h3>Quick links</h3>
-          <a href="#who">The Ecosystem</a>
+          <a href="#who">Who we are</a>
           <a href="#philosophy">Philosophy</a>
           <a href="#pathway">Build Loop</a>
           <a href="#institutions">For Institutions</a>
-          <a href="#partners">Ecosystem Partners</a>
+          <a href="#partners">Strategic Collaborations</a>
           <a href="#programmes">Programmes</a>
         </nav>
         <address>
@@ -621,11 +634,11 @@ export default function Home() {
             Pandu Kita Plaza, 2nd Floor,<br />
             Chennai, Tamil Nadu 600001
           </p>
-          <a href="tel:+91984005339">+91 98400 5339</a>
+          <a href="tel:+919840053359">+91 98400 53359</a>
           <a href="mailto:prasanth@makeon.build">prasanth@makeon.build</a>
         </address>
         <small>
-          © 2026 Makeon Learning Ecosystem. Programme documents, formal outcomes and leadership details can be expanded as Makeon confirms them.
+          © 2026 Makeon Technologies Private Limited. Programme documents, formal outcomes and leadership details can be expanded as Makeon confirms them.
         </small>
       </footer>
     </main>

@@ -1239,57 +1239,76 @@
 }
 
 /* ==========================================================================
-   FOOTER (EXACT MATCH WITH REFERENCE CONVERTO IMAGE)
+   FOOTER (EXACT MATCH WITH REFERENCE CONVERTO DESIGN)
    ========================================================================== */
-.sw-footer-converto {
+.sw-footer-outer {
+  background: var(--sw-bg);
+  padding: 6vw 4vw 4vw;
+  border-top: 1px solid var(--sw-line-dark);
+}
+
+.sw-footer-card {
   background: #09090b;
+  border: 1px solid #1f1f23;
   color: #ffffff;
-  padding: 5vw 4vw 0vw;
-  border-top: 1px solid #1f1f23;
+  padding: 48px 48px 0;
+  max-width: 1320px;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
 }
 
-.sw-footer-top-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
-  gap: 3vw;
-  margin-bottom: 48px;
+.sw-footer-top-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 56px;
 }
 
-.sw-footer-brand-col h2 {
-  font-size: 26px;
+.sw-footer-left-brand {
+  max-width: 360px;
+}
+
+.sw-footer-left-brand h2 {
+  font-size: 24px;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin: 0 0 14px;
   color: #ffffff;
-  font-family: var(--sw-font-mono);
+  font-family: var(--sw-font-display);
+  margin: 0 0 14px;
 }
 
-.sw-footer-brand-col p {
+.sw-footer-left-brand p {
   color: #888892;
-  font-size: 14px;
+  font-size: 13.5px;
   line-height: 1.6;
-  max-width: 320px;
   margin: 0;
 }
 
-.sw-footer-nav-col h4 {
-  font-family: var(--sw-font-mono);
-  font-size: 13px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 16px;
+.sw-footer-columns-group {
+  display: flex;
+  gap: 4vw;
 }
 
-.sw-footer-nav-col nav {
+.sw-footer-nav-col h4 {
+  font-family: var(--sw-font-display);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+
+.sw-footer-nav-col nav,
+.sw-footer-nav-col address {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  font-style: normal;
 }
 
-.sw-footer-nav-col a {
+.sw-footer-nav-col a,
+.sw-footer-nav-col address span {
   color: #888892;
   text-decoration: none;
   font-size: 13.5px;
@@ -1300,64 +1319,42 @@
   color: #ffffff;
 }
 
-.sw-footer-contact-col address {
-  font-style: normal;
-  color: #888892;
-  font-size: 13.5px;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.sw-footer-contact-col a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 700;
-  transition: color 0.2s ease;
-}
-
-.sw-footer-contact-col a:hover {
-  color: var(--sw-accent-volt);
-}
-
 /* Middle Metadata Rule */
-.sw-footer-meta-row {
+.sw-footer-meta-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #1f1f23;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px 0;
   font-size: 12px;
   color: #6b7280;
   font-family: var(--sw-font-mono);
 }
 
 /* Giant Submerged Typography (Exact CONVRTO Style) */
-.sw-footer-submerged-logo {
-  position: relative;
+.sw-footer-giant-box {
   width: 100%;
   overflow: hidden;
-  text-align: center;
-  line-height: 0.72;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 130px;
   user-select: none;
   pointer-events: none;
-  margin-top: 10px;
 }
 
-.sw-giant-wordmark {
-  display: block;
-  font-size: clamp(80px, 19vw, 290px);
+.sw-footer-giant-text {
+  font-size: clamp(60px, 14.5vw, 190px);
   font-weight: 900;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   font-family: var(--sw-font-display);
   text-transform: uppercase;
-  background: linear-gradient(180deg, #10b981 0%, #064e3b 70%, rgba(6, 78, 59, 0) 100%);
+  background: linear-gradient(180deg, #10b981 0%, #064e3b 65%, rgba(6, 78, 59, 0) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  opacity: 0.85;
-  transform: translateY(14%);
+  line-height: 0.72;
+  transform: translateY(22%);
+  display: block;
 }
 
 /* Floating Mobile Quick Action Bar */

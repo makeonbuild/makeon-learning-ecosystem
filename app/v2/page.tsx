@@ -725,74 +725,71 @@ export default function MakeonSwissV2() {
       {/* ==========================================================================
          FOOTER (EXACT MATCH WITH REFERENCE CONVERTO DESIGN)
          ========================================================================== */}
-      <footer className="sw-footer-converto">
-        <div className="sw-footer-top-grid">
-          {/* Brand Col */}
-          <div className="sw-footer-brand-col">
-            <h2>MAKEON</h2>
-            <p>
-              Makeon is India’s builder development infrastructure, partnering with schools, learning centres and families to build real capability through hands-on engineering.
-            </p>
+      <footer className="sw-footer-outer">
+        <div className="sw-footer-card">
+          <div className="sw-footer-top-row">
+            {/* Brand Col */}
+            <div className="sw-footer-left-brand">
+              <h2>MAKEON</h2>
+              <p>
+                Makeon is India’s builder development infrastructure, partnering with schools, learning centres and families to build real capability through hands-on engineering.
+              </p>
+            </div>
+
+            {/* Columns Group */}
+            <div className="sw-footer-columns-group">
+              <div className="sw-footer-nav-col">
+                <h4>Quick link</h4>
+                <nav>
+                  <a href="#top">Home</a>
+                  <a href="#who">About us</a>
+                  <a href="#pathway">Build Loop</a>
+                  <a href="#enquire">Contact us</a>
+                </nav>
+              </div>
+
+              <div className="sw-footer-nav-col">
+                <h4>Programmes</h4>
+                <nav>
+                  <a href="#programmes">Grades 6–9</a>
+                  <a href="#programmes">Grade 11 Studio</a>
+                  <a href="#programmes">Institutions</a>
+                  <a href="#resources">Curriculum</a>
+                </nav>
+              </div>
+
+              <div className="sw-footer-nav-col">
+                <h4>Research</h4>
+                <nav>
+                  <a href="#resources">White papers</a>
+                  <a href="#resources">Case studies</a>
+                  <a href="#collaborations">Partnerships</a>
+                  <a href="#philosophy">Methodology</a>
+                </nav>
+              </div>
+
+              <div className="sw-footer-nav-col">
+                <h4>Contact</h4>
+                <address>
+                  <span>330 Thambu Chetty St</span>
+                  <span>Chennai 600001</span>
+                  <a href="tel:+919840053359">+91 98400 53359</a>
+                  <a href="mailto:prasanth@makeon.build">prasanth@makeon.build</a>
+                </address>
+              </div>
+            </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="sw-footer-nav-col">
-            <h4>Quick Links</h4>
-            <nav>
-              <a href="#top">Home</a>
-              <a href="#who">About Us</a>
-              <a href="#pathway">Build Loop</a>
-              <a href="#enquire">Contact Us</a>
-            </nav>
+          {/* Middle Metadata Rule */}
+          <div className="sw-footer-meta-bar">
+            <span>© 2026 Makeon Technologies Private Limited. All rights reserved.</span>
+            <span>Building the next generation of builders.</span>
           </div>
 
-          {/* Programmes */}
-          <div className="sw-footer-nav-col">
-            <h4>Programmes</h4>
-            <nav>
-              <a href="#programmes">Grades 6–9</a>
-              <a href="#programmes">Grade 11 Studio</a>
-              <a href="#programmes">Institutions</a>
-              <a href="#resources">Curriculum</a>
-            </nav>
+          {/* Giant Submerged Brand Typography (Exact CONVRTO Style) */}
+          <div className="sw-footer-giant-box" aria-hidden="true">
+            <span className="sw-footer-giant-text">MAKEON</span>
           </div>
-
-          {/* Research */}
-          <div className="sw-footer-nav-col">
-            <h4>Research</h4>
-            <nav>
-              <a href="#resources">White Papers</a>
-              <a href="#resources">Case Studies</a>
-              <a href="#collaborations">Partnerships</a>
-              <a href="#philosophy">Methodology</a>
-            </nav>
-          </div>
-
-          {/* Contact Specification */}
-          <div className="sw-footer-contact-col">
-            <h4 style={{ color: "#ffffff", fontFamily: "var(--sw-font-mono)", fontSize: "13px", margin: "0 0 16px" }}>
-              Contact
-            </h4>
-            <address>
-              <span>Rtn Prasanth Deenadayal</span>
-              <span>330 Thambu Chetty Street,</span>
-              <span>Pandu Kita Plaza, 2nd Floor,</span>
-              <span>Chennai 600001</span>
-              <a href="tel:+919840053359">+91 98400 53359</a>
-              <a href="mailto:prasanth@makeon.build">prasanth@makeon.build</a>
-            </address>
-          </div>
-        </div>
-
-        {/* Middle Metadata Rule */}
-        <div className="sw-footer-meta-row">
-          <span>© 2026 Makeon Technologies Private Limited. All rights reserved.</span>
-          <span>Building the next generation of builders.</span>
-        </div>
-
-        {/* Giant Submerged Brand Typography (Exact CONVRTO Style) */}
-        <div className="sw-footer-submerged-logo" aria-hidden="true">
-          <span className="sw-giant-wordmark">MAKEON</span>
         </div>
       </footer>
 

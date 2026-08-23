@@ -736,47 +736,48 @@ export default function MakeonSwissV2() {
               </p>
             </div>
 
-            {/* Columns Group */}
-            <div className="sw-footer-columns-group">
-              <div className="sw-footer-nav-col">
-                <h4>Quick link</h4>
-                <nav>
-                  <a href="#top">Home</a>
-                  <a href="#who">About us</a>
-                  <a href="#pathway">Build Loop</a>
-                  <a href="#enquire">Contact us</a>
-                </nav>
-              </div>
+            {/* Quick Link Col */}
+            <div className="sw-footer-nav-col">
+              <h4>Quick link</h4>
+              <nav>
+                <a href="#top">Home</a>
+                <a href="#who">About us</a>
+                <a href="#pathway">Build Loop</a>
+                <a href="#enquire">Contact us</a>
+              </nav>
+            </div>
 
-              <div className="sw-footer-nav-col">
-                <h4>Programmes</h4>
-                <nav>
-                  <a href="#programmes">Grades 6–9</a>
-                  <a href="#programmes">Grade 11 Studio</a>
-                  <a href="#programmes">Institutions</a>
-                  <a href="#resources">Curriculum</a>
-                </nav>
-              </div>
+            {/* Programmes Col */}
+            <div className="sw-footer-nav-col">
+              <h4>Programmes</h4>
+              <nav>
+                <a href="#programmes">Grades 6–9</a>
+                <a href="#programmes">Grade 11 Studio</a>
+                <a href="#programmes">Institutions</a>
+                <a href="#resources">Curriculum</a>
+              </nav>
+            </div>
 
-              <div className="sw-footer-nav-col">
-                <h4>Research</h4>
-                <nav>
-                  <a href="#resources">White papers</a>
-                  <a href="#resources">Case studies</a>
-                  <a href="#collaborations">Partnerships</a>
-                  <a href="#philosophy">Methodology</a>
-                </nav>
-              </div>
+            {/* Research Col */}
+            <div className="sw-footer-nav-col">
+              <h4>Research</h4>
+              <nav>
+                <a href="#resources">White papers</a>
+                <a href="#resources">Case studies</a>
+                <a href="#collaborations">Partnerships</a>
+                <a href="#philosophy">Methodology</a>
+              </nav>
+            </div>
 
-              <div className="sw-footer-nav-col">
-                <h4>Contact</h4>
-                <address>
-                  <span>330 Thambu Chetty St</span>
-                  <span>Chennai 600001</span>
-                  <a href="tel:+919840053359">+91 98400 53359</a>
-                  <a href="mailto:prasanth@makeon.build">prasanth@makeon.build</a>
-                </address>
-              </div>
+            {/* Contact Col */}
+            <div className="sw-footer-nav-col">
+              <h4>Contact</h4>
+              <address>
+                <span>330 Thambu Chetty St</span>
+                <span>Chennai 600001</span>
+                <a href="tel:+919840053359">+91 98400 53359</a>
+                <a href="mailto:prasanth@makeon.build">prasanth@makeon.build</a>
+              </address>
             </div>
           </div>
 
@@ -786,9 +787,34 @@ export default function MakeonSwissV2() {
             <span>Building the next generation of builders.</span>
           </div>
 
-          {/* Giant Submerged Brand Typography (Exact CONVRTO Style) */}
+          {/* Giant Submerged SVG Typography (Exact CONVRTO Style) */}
           <div className="sw-footer-giant-box" aria-hidden="true">
-            <span className="sw-footer-giant-text">MAKEON</span>
+            <svg
+              viewBox="0 0 1100 190"
+              width="100%"
+              height="auto"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <defs>
+                <linearGradient id="convertoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#10b981" stopOpacity="1" />
+                  <stop offset="55%" stopColor="#064e3b" stopOpacity="0.85" />
+                  <stop offset="100%" stopColor="#064e3b" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              <text
+                x="50%"
+                y="155"
+                textAnchor="middle"
+                fontFamily="'Plus Jakarta Sans', -apple-system, sans-serif"
+                fontWeight="900"
+                fontSize="185"
+                letterSpacing="-4"
+                fill="url(#convertoGrad)"
+              >
+                MAKEON
+              </text>
+            </svg>
           </div>
         </div>
       </footer>

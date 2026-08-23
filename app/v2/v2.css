@@ -1243,7 +1243,7 @@
    ========================================================================== */
 .sw-footer-outer {
   background: var(--sw-bg);
-  padding: 6vw 4vw 4vw;
+  padding: 80px 4vw 60px;
   border-top: 1px solid var(--sw-line-dark);
 }
 
@@ -1251,28 +1251,28 @@
   background: #09090b;
   border: 1px solid #1f1f23;
   color: #ffffff;
-  padding: 48px 48px 0;
-  max-width: 1320px;
+  padding: 56px 56px 0;
+  max-width: 1240px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
 }
 
 .sw-footer-top-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 48px;
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr 0.9fr 0.9fr 1.1fr;
+  gap: 32px;
   margin-bottom: 56px;
 }
 
 .sw-footer-left-brand {
-  max-width: 360px;
+  padding-right: 24px;
 }
 
 .sw-footer-left-brand h2 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #ffffff;
   font-family: var(--sw-font-display);
@@ -1282,13 +1282,8 @@
 .sw-footer-left-brand p {
   color: #888892;
   font-size: 13.5px;
-  line-height: 1.6;
+  line-height: 1.65;
   margin: 0;
-}
-
-.sw-footer-columns-group {
-  display: flex;
-  gap: 4vw;
 }
 
 .sw-footer-nav-col h4 {
@@ -1297,6 +1292,7 @@
   font-weight: 600;
   color: #ffffff;
   margin: 0 0 18px;
+  text-transform: none;
 }
 
 .sw-footer-nav-col nav,
@@ -1307,12 +1303,20 @@
   font-style: normal;
 }
 
-.sw-footer-nav-col a,
-.sw-footer-nav-col address span {
+.sw-footer-nav-col a {
   color: #888892;
   text-decoration: none;
-  font-size: 13.5px;
+  font-size: 13px;
+  text-transform: none;
+  font-family: var(--sw-font-display);
   transition: color 0.2s ease;
+}
+
+.sw-footer-nav-col address span {
+  color: #888892;
+  font-size: 13px;
+  font-family: var(--sw-font-display);
+  line-height: 1.5;
 }
 
 .sw-footer-nav-col a:hover {
@@ -1325,36 +1329,28 @@
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 24px 0;
+  padding: 24px 0 16px;
   font-size: 12px;
   color: #6b7280;
   font-family: var(--sw-font-mono);
 }
 
-/* Giant Submerged Typography (Exact CONVRTO Style) */
+/* Giant Submerged SVG Typography (Guaranteed 100% Fit & No Clipping) */
 .sw-footer-giant-box {
   width: 100%;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 130px;
+  display: block;
+  margin-top: 8px;
+  line-height: 0;
   user-select: none;
   pointer-events: none;
 }
 
-.sw-footer-giant-text {
-  font-size: clamp(60px, 14.5vw, 190px);
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  font-family: var(--sw-font-display);
-  text-transform: uppercase;
-  background: linear-gradient(180deg, #10b981 0%, #064e3b 65%, rgba(6, 78, 59, 0) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 0.72;
-  transform: translateY(22%);
+.sw-footer-giant-box svg {
+  width: 100%;
+  height: auto;
   display: block;
+  transform: translateY(22%);
 }
 
 /* Floating Mobile Quick Action Bar */

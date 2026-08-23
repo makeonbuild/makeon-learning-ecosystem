@@ -723,20 +723,20 @@ export default function MakeonSwissV2() {
       </section>
 
       {/* ==========================================================================
-         FOOTER (FULL-WIDTH SEAMLESS DARK CONVERTO STYLE)
+         FOOTER (EXACT CONVERTO FLOATING CARD SPECIFICATION)
          ========================================================================== */}
-      <footer className="sw-footer-seamless">
-        <div className="sw-footer-inner-container">
+      <footer className="sw-footer-section-wrapper">
+        <div className="sw-footer-floating-panel">
           <div className="sw-footer-top-row">
             {/* Brand Col */}
             <div className="sw-footer-left-brand">
               <h2>MAKEON</h2>
               <p>
-                Makeon is India’s builder development infrastructure, partnering with schools, learning centres and families to build real capability through hands-on engineering.
+                Makeon is India’s builder development infrastructure, partnering with schools, learning centres and families to build capability through hands-on engineering.
               </p>
             </div>
 
-            {/* Columns Group (pushed to far right) */}
+            {/* Columns Group */}
             <div className="sw-footer-columns-group">
               {/* Quick Link Col */}
               <div className="sw-footer-nav-col">
@@ -772,7 +772,7 @@ export default function MakeonSwissV2() {
               </div>
 
               {/* Contact Col */}
-              <div className="sw-footer-nav-col">
+              <div className="sw-footer-nav-col sw-footer-contact-col">
                 <h4>Contact</h4>
                 <address>
                   <span>330 Thambu Chetty St</span>
@@ -793,27 +793,28 @@ export default function MakeonSwissV2() {
           {/* Giant Submerged SVG Typography (Exact CONVRTO Style) */}
           <div className="sw-footer-giant-box" aria-hidden="true">
             <svg
-              viewBox="0 0 1100 190"
+              viewBox="0 0 1000 170"
               width="100%"
               height="auto"
               preserveAspectRatio="xMidYMid meet"
             >
               <defs>
-                <linearGradient id="convertoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#10b981" stopOpacity="1" />
-                  <stop offset="55%" stopColor="#064e3b" stopOpacity="0.85" />
-                  <stop offset="100%" stopColor="#064e3b" stopOpacity="0" />
+                <linearGradient id="convertoGradHorizontal" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#044e3b" />
+                  <stop offset="35%" stopColor="#10b981" />
+                  <stop offset="65%" stopColor="#34d399" />
+                  <stop offset="100%" stopColor="#044e3b" />
                 </linearGradient>
               </defs>
               <text
                 x="50%"
-                y="155"
+                y="142"
                 textAnchor="middle"
-                fontFamily="'Plus Jakarta Sans', -apple-system, sans-serif"
+                fontFamily="'Plus Jakarta Sans', sans-serif"
                 fontWeight="900"
-                fontSize="185"
-                letterSpacing="-4"
-                fill="url(#convertoGrad)"
+                fontSize="175"
+                letterSpacing="-3"
+                fill="url(#convertoGradHorizontal)"
               >
                 MAKEON
               </text>

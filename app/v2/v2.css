@@ -1239,98 +1239,117 @@
 }
 
 /* ==========================================================================
-   FOOTER (FULL-WIDTH SEAMLESS DARK CONVERTO STYLE)
+   FOOTER (EXACT CONVERTO FLOATING CARD SPECIFICATION)
    ========================================================================== */
-.sw-footer-seamless {
-  background: #09090b;
-  color: #ffffff;
-  padding: 80px 4vw 0vw;
-  border-top: 1px solid #1f1f23;
+.sw-footer-section-wrapper {
+  background: #18181b; /* Visible dark background around the contained card */
+  padding: 60px 4vw 60px;
   width: 100%;
-  position: relative;
-  overflow: hidden;
 }
 
-.sw-footer-inner-container {
-  width: 100%;
+.sw-footer-floating-panel {
+  background: #09090b;
+  border: 1px solid #27272a;
+  border-radius: 24px !important;
+  color: #ffffff;
+  padding: 48px 48px 0;
+  max-width: 1120px;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .sw-footer-top-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 48px;
-  width: 100%;
-  margin-bottom: 64px;
+  gap: 36px;
+  margin-bottom: 44px;
 }
 
 .sw-footer-left-brand {
-  max-width: 380px;
+  max-width: 280px;
 }
 
 .sw-footer-left-brand h2 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #ffffff;
   font-family: var(--sw-font-display);
-  margin: 0 0 16px;
+  margin: 0 0 10px;
 }
 
 .sw-footer-left-brand p {
-  color: #888892;
-  font-size: 14px;
-  line-height: 1.65;
+  color: #9ca3af;
+  font-size: 13px;
+  line-height: 1.55;
   margin: 0;
 }
 
 .sw-footer-columns-group {
   display: flex;
-  justify-content: flex-end;
-  gap: clamp(24px, 4.5vw, 64px);
-}
-
-.sw-footer-nav-col {
-  min-width: 120px;
+  gap: 36px;
 }
 
 .sw-footer-nav-col h4 {
   font-family: var(--sw-font-display);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 700;
   color: #ffffff;
-  margin: 0 0 20px;
+  margin: 0 0 14px;
   text-transform: none;
 }
 
-.sw-footer-nav-col nav,
-.sw-footer-nav-col address {
+.sw-footer-nav-col nav {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  font-style: normal;
+  gap: 7px; /* Tighter vertical spacing between links */
 }
 
 .sw-footer-nav-col a {
-  color: #888892;
+  color: #9ca3af;
   text-decoration: none;
-  font-size: 13.5px;
+  font-size: 12.5px;
   text-transform: none;
   font-family: var(--sw-font-display);
-  transition: color 0.2s ease;
+  transition: color 0.15s ease;
 }
 
 .sw-footer-nav-col a:hover {
   color: #ffffff;
 }
 
-.sw-footer-nav-col address span {
-  color: #888892;
-  font-size: 13.5px;
+.sw-footer-contact-col {
+  max-width: 180px;
+}
+
+.sw-footer-contact-col address {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Generous spacing for contact items */
+  font-style: normal;
+}
+
+.sw-footer-contact-col address span,
+.sw-footer-contact-col address a {
+  color: #9ca3af;
+  font-size: 12.5px;
   font-family: var(--sw-font-display);
-  line-height: 1.5;
+  text-decoration: none;
+  line-height: 1.45;
+}
+
+.sw-footer-contact-col address a {
+  color: #d1d5db;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.sw-footer-contact-col address a:hover {
+  color: #10b981;
 }
 
 /* Middle Metadata Rule */
@@ -1338,20 +1357,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #1f1f23;
-  padding: 28px 0 20px;
+  border-top: 1px solid #27272a;
+  padding: 20px 0 10px;
   width: 100%;
-  font-size: 12px;
+  font-size: 11.5px;
   color: #6b7280;
   font-family: var(--sw-font-mono);
 }
 
-/* Giant Submerged SVG Typography (Exact CONVRTO Style) */
+/* Giant Submerged SVG Typography (Exact CONVRTO Style with Left-to-Right Green Gradient) */
 .sw-footer-giant-box {
   width: 100%;
   overflow: hidden;
   display: block;
-  margin-top: 12px;
+  margin-top: 4px;
   line-height: 0;
   user-select: none;
   pointer-events: none;
@@ -1361,7 +1380,22 @@
   width: 100%;
   height: auto;
   display: block;
-  transform: translateY(22%);
+  transform: translateY(20%);
+}
+
+@media (max-width: 900px) {
+  .sw-footer-top-row {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .sw-footer-columns-group {
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+  .sw-footer-floating-panel {
+    padding: 32px 24px 0;
+    border-radius: 16px !important;
+  }
 }
 
 /* Floating Mobile Quick Action Bar */

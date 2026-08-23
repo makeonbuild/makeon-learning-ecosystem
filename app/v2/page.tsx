@@ -736,48 +736,51 @@ export default function MakeonSwissV2() {
               </p>
             </div>
 
-            {/* Quick Link Col */}
-            <div className="sw-footer-nav-col">
-              <h4>Quick link</h4>
-              <nav>
-                <a href="#top">Home</a>
-                <a href="#who">About us</a>
-                <a href="#pathway">Build Loop</a>
-                <a href="#enquire">Contact us</a>
-              </nav>
-            </div>
+            {/* Columns Group (pushed to far right) */}
+            <div className="sw-footer-columns-group">
+              {/* Quick Link Col */}
+              <div className="sw-footer-nav-col">
+                <h4>Quick link</h4>
+                <nav>
+                  <a href="#top">Home</a>
+                  <a href="#who">About us</a>
+                  <a href="#pathway">Build Loop</a>
+                  <a href="#enquire">Contact us</a>
+                </nav>
+              </div>
 
-            {/* Programmes Col */}
-            <div className="sw-footer-nav-col">
-              <h4>Programmes</h4>
-              <nav>
-                <a href="#programmes">Grades 6–9</a>
-                <a href="#programmes">Grade 11 Studio</a>
-                <a href="#programmes">Institutions</a>
-                <a href="#resources">Curriculum</a>
-              </nav>
-            </div>
+              {/* Programmes Col */}
+              <div className="sw-footer-nav-col">
+                <h4>Programmes</h4>
+                <nav>
+                  <a href="#programmes">Grades 6–9</a>
+                  <a href="#programmes">Grade 11 Studio</a>
+                  <a href="#programmes">Institutions</a>
+                  <a href="#resources">Curriculum</a>
+                </nav>
+              </div>
 
-            {/* Research Col */}
-            <div className="sw-footer-nav-col">
-              <h4>Research</h4>
-              <nav>
-                <a href="#resources">White papers</a>
-                <a href="#resources">Case studies</a>
-                <a href="#collaborations">Partnerships</a>
-                <a href="#philosophy">Methodology</a>
-              </nav>
-            </div>
+              {/* Research Col */}
+              <div className="sw-footer-nav-col">
+                <h4>Research</h4>
+                <nav>
+                  <a href="#resources">White papers</a>
+                  <a href="#resources">Case studies</a>
+                  <a href="#collaborations">Partnerships</a>
+                  <a href="#philosophy">Methodology</a>
+                </nav>
+              </div>
 
-            {/* Contact Col */}
-            <div className="sw-footer-nav-col">
-              <h4>Contact</h4>
-              <address>
-                <span>330 Thambu Chetty St</span>
-                <span>Chennai 600001</span>
-                <a href="tel:+919840053359">+91 98400 53359</a>
-                <a href="mailto:prasanth@makeon.build">prasanth@makeon.build</a>
-              </address>
+              {/* Contact Col */}
+              <div className="sw-footer-nav-col">
+                <h4>Contact</h4>
+                <address>
+                  <span>330 Thambu Chetty St</span>
+                  <span>Chennai 600001</span>
+                  <a href="tel:+919840053359">+91 98400 53359</a>
+                  <a href="mailto:prasanth@makeon.build">prasanth@makeon.build</a>
+                </address>
+              </div>
             </div>
           </div>
 

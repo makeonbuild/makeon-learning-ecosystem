@@ -1239,59 +1239,55 @@
 }
 
 /* ==========================================================================
-   FOOTER (EXACT MATCH WITH REFERENCE CONVERTO DESIGN)
+   FOOTER (FULL-WIDTH SEAMLESS DARK CONVERTO STYLE)
    ========================================================================== */
-.sw-footer-outer {
-  background: var(--sw-bg);
-  padding: 80px 4vw 60px;
-  border-top: 1px solid var(--sw-line-dark);
-}
-
-.sw-footer-card {
+.sw-footer-seamless {
   background: #09090b;
-  border: 1px solid #1f1f23;
   color: #ffffff;
-  padding: 56px 56px 0;
-  max-width: 1240px;
-  margin: 0 auto;
+  padding: 80px 6vw 0vw;
+  border-top: 1px solid #1f1f23;
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
 
-.sw-footer-top-row {
-  display: grid;
-  grid-template-columns: 1.4fr 0.9fr 0.9fr 0.9fr 1.1fr;
-  gap: 32px;
-  margin-bottom: 56px;
+.sw-footer-inner-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.sw-footer-left-brand {
-  padding-right: 24px;
+.sw-footer-top-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 64px;
 }
 
 .sw-footer-left-brand h2 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #ffffff;
   font-family: var(--sw-font-display);
-  margin: 0 0 14px;
+  margin: 0 0 16px;
 }
 
 .sw-footer-left-brand p {
   color: #888892;
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.65;
+  max-width: 340px;
   margin: 0;
 }
 
 .sw-footer-nav-col h4 {
   font-family: var(--sw-font-display);
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 600;
   color: #ffffff;
-  margin: 0 0 18px;
+  margin: 0 0 20px;
   text-transform: none;
 }
 
@@ -1306,21 +1302,21 @@
 .sw-footer-nav-col a {
   color: #888892;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 13.5px;
   text-transform: none;
   font-family: var(--sw-font-display);
   transition: color 0.2s ease;
 }
 
-.sw-footer-nav-col address span {
-  color: #888892;
-  font-size: 13px;
-  font-family: var(--sw-font-display);
-  line-height: 1.5;
-}
-
 .sw-footer-nav-col a:hover {
   color: #ffffff;
+}
+
+.sw-footer-nav-col address span {
+  color: #888892;
+  font-size: 13.5px;
+  font-family: var(--sw-font-display);
+  line-height: 1.5;
 }
 
 /* Middle Metadata Rule */
@@ -1328,19 +1324,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 24px 0 16px;
+  border-top: 1px solid #1f1f23;
+  padding: 28px 0 20px;
   font-size: 12px;
   color: #6b7280;
   font-family: var(--sw-font-mono);
 }
 
-/* Giant Submerged SVG Typography (Guaranteed 100% Fit & No Clipping) */
+/* Giant Submerged SVG Typography (Exact CONVRTO Style) */
 .sw-footer-giant-box {
   width: 100%;
   overflow: hidden;
   display: block;
-  margin-top: 8px;
+  margin-top: 12px;
   line-height: 0;
   user-select: none;
   pointer-events: none;

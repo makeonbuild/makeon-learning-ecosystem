@@ -723,10 +723,10 @@ export default function MakeonSwissV2() {
       </section>
 
       {/* ==========================================================================
-         FOOTER (EXACT MATCH WITH REFERENCE CONVERTO DESIGN)
+         FOOTER (FULL-WIDTH SEAMLESS DARK CONVERTO STYLE)
          ========================================================================== */}
-      <footer className="sw-footer-outer">
-        <div className="sw-footer-card">
+      <footer className="sw-footer-seamless">
+        <div className="sw-footer-inner-container">
           <div className="sw-footer-top-row">
             {/* Brand Col */}
             <div className="sw-footer-left-brand">

@@ -211,7 +211,15 @@ export default function MakeonSwissV2() {
       {/* Main Header */}
       <header className="sw-header">
         <a className="sw-brand-lockup" href="#top" aria-label="Makeon home">
-          <div className="sw-brand-icon">M</div>
+          <div className="sw-brand-icon">
+            {/* Makeon Logo Mark */}
+            <svg width="32" height="32" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="120" rx="0" fill="#F7F5EF"/>
+              <path d="M12 14h27l21 23 21-23h27v92H84V50L60 74 36 50v56H12V14Z" fill="#071A33"/>
+              <path d="M39 14h42L60 37 39 14Z" fill="#F7F5EF"/>
+              <rect x="48" y="80" width="24" height="24" fill="#A31D2D"/>
+            </svg>
+          </div>
           <div className="sw-brand-text">
             <strong>MAKEON</strong>
             <small>Builder Development Infrastructure</small>
@@ -722,76 +730,112 @@ export default function MakeonSwissV2() {
         </div>
       </section>
 
-      {/* ==========================================================================
-         FOOTER (EXACT CONVERTO FLOATING CARD SPECIFICATION)
-         ========================================================================== */}
-      <footer className="sw-footer-section-wrapper">
-        <div className="sw-footer-floating-panel">
-          <div className="sw-footer-top-row">
-            {/* Brand Col */}
-            <div className="sw-footer-left-brand">
-              <h2>MAKEON</h2>
-              <p>
-                Makeon is India’s builder development infrastructure, partnering with schools, learning centres and families to build capability through hands-on engineering.
-              </p>
+      {/* ================================================================
+          FOOTER — CONVERTO STYLE, FULL WIDTH, RED GRADIENT WORDMARK
+          ================================================================ */}
+      {/* ================================================================
+          FOOTER — PADISAVE STYLE REBUILD (DARK CHARCOAL + RED WORDMARK)
+          ================================================================ */}
+      <footer className="sw-footer-padisave">
+        <div className="sw-footer-padisave-container">
+          {/* Top 5-Column Navigation Grid */}
+          <div className="sw-footer-padisave-grid">
+            {/* Column 1: Company */}
+            <div className="sw-footer-padisave-col">
+              <h4>Company</h4>
+              <nav>
+                <a href="#who">About us</a>
+                <a href="#philosophy">Methodology</a>
+                <a href="#pathway">The Build Loop</a>
+                <a href="#enquire">Contact us</a>
+              </nav>
             </div>
 
-            {/* Columns Group */}
-            <div className="sw-footer-columns-group">
-              {/* Quick Link Col */}
-              <div className="sw-footer-nav-col">
-                <h4>Quick link</h4>
-                <nav>
-                  <a href="#top">Home</a>
-                  <a href="#who">About us</a>
-                  <a href="#pathway">Build Loop</a>
-                  <a href="#enquire">Contact us</a>
-                </nav>
-              </div>
+            {/* Column 2: Programmes */}
+            <div className="sw-footer-padisave-col">
+              <h4>Programmes</h4>
+              <nav>
+                <a href="#programmes">Grades 6–9</a>
+                <a href="#programmes">Grade 11 Studio</a>
+                <a href="#programmes">Institutions</a>
+                <a href="#programmes">Project details</a>
+              </nav>
+            </div>
 
-              {/* Programmes Col */}
-              <div className="sw-footer-nav-col">
-                <h4>Programmes</h4>
-                <nav>
-                  <a href="#programmes">Grades 6–9</a>
-                  <a href="#programmes">Grade 11 Studio</a>
-                  <a href="#programmes">Institutions</a>
-                  <a href="#resources">Curriculum</a>
-                </nav>
-              </div>
+            {/* Column 3: Resources */}
+            <div className="sw-footer-padisave-col">
+              <h4>Resources</h4>
+              <nav>
+                <a href="#resources">White papers</a>
+                <a href="#resources">Case studies</a>
+                <a href="#resources">Parent Notes</a>
+                <a href="#resources">Facilitator Notes</a>
+              </nav>
+            </div>
 
-              {/* Research Col */}
-              <div className="sw-footer-nav-col">
-                <h4>Research</h4>
-                <nav>
-                  <a href="#resources">White papers</a>
-                  <a href="#resources">Case studies</a>
-                  <a href="#collaborations">Partnerships</a>
-                  <a href="#philosophy">Methodology</a>
-                </nav>
-              </div>
+            {/* Column 4: Legal & Partners */}
+            <div className="sw-footer-padisave-col">
+              <h4>Legal</h4>
+              <nav>
+                <a href="#resources">Privacy policy</a>
+                <a href="#resources">Terms of use</a>
+                <a href="#resources">License</a>
+                <a href="#collaborations">Partnerships</a>
+              </nav>
+            </div>
 
-              {/* Contact Col */}
-              <div className="sw-footer-nav-col sw-footer-contact-col">
-                <h4>Contact</h4>
-                <address>
-                  <span>330 Thambu Chetty St</span>
-                  <span>Chennai 600001</span>
-                  <a href="tel:+919840053359">+91 98400 53359</a>
-                  <a href="mailto:prasanth@makeon.build">prasanth@makeon.build</a>
-                </address>
-              </div>
+            {/* Column 5: Contact */}
+            <div className="sw-footer-padisave-col">
+              <h4>Contact</h4>
+              <nav>
+                <a href="mailto:prasanth@makeon.build">prasanth@makeon.build</a>
+                <a href="tel:+919840053359">+91 98400 53359</a>
+                <span>044-MAKEON-BUILD</span>
+              </nav>
             </div>
           </div>
 
-          {/* Middle Metadata Rule */}
-          <div className="sw-footer-meta-bar">
-            <span>© 2026 Makeon Technologies Private Limited. All rights reserved.</span>
-            <span>Building the next generation of builders.</span>
+          {/* Thin Full Width Divider Line */}
+          <div className="sw-footer-padisave-divider" />
+
+          {/* Middle Metadata Row: Stacked Address & Copyright Left, Socials Right */}
+          <div className="sw-footer-padisave-meta">
+            <div>
+              <div className="sw-footer-padisave-address">
+                Makeon HQ, 330 Thambu Chetty St, Chennai 600 001, India.
+              </div>
+              <div className="sw-footer-padisave-copy">
+                © 2026 Makeon Technologies Private Limited. All rights reserved.
+              </div>
+            </div>
+
+            {/* Social Icons */}
+            <div className="sw-footer-padisave-socials">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="sw-footer-social-icon" aria-label="LinkedIn">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                </svg>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="sw-footer-social-icon" aria-label="X">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="sw-footer-social-icon" aria-label="Instagram">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="sw-footer-social-icon" aria-label="Facebook">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+            </div>
           </div>
 
-          {/* Giant Submerged SVG Typography (Exact CONVRTO Style) */}
-          <div className="sw-footer-giant-box" aria-hidden="true">
+          {/* Giant Submerged Wordmark: Semi-transparent Red Tint overlay */}
+          <div className="sw-footer-padisave-wordmark" aria-hidden="true">
             <svg
               viewBox="0 0 1000 170"
               width="100%"
@@ -799,22 +843,46 @@ export default function MakeonSwissV2() {
               preserveAspectRatio="xMidYMid meet"
             >
               <defs>
-                <linearGradient id="convertoGradHorizontal" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#044e3b" />
-                  <stop offset="35%" stopColor="#10b981" />
-                  <stop offset="65%" stopColor="#34d399" />
-                  <stop offset="100%" stopColor="#044e3b" />
+                {/* Red Submerged Gradient — glowing top fade to transparent/dark bottom */}
+                <linearGradient id="padisaveRedGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#a31d2d" stopOpacity="0.45" />
+                  <stop offset="50%" stopColor="#e62b3e" stopOpacity="0.22" />
+                  <stop offset="100%" stopColor="#0a0a0c" stopOpacity="0.0" />
+                </linearGradient>
+
+                {/* Subtle Horizontal Gradient sheen */}
+                <linearGradient id="padisaveHorizGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#6e0f1b" stopOpacity="0.3" />
+                  <stop offset="50%" stopColor="#e62b3e" stopOpacity="0.5" />
+                  <stop offset="100%" stopColor="#6e0f1b" stopOpacity="0.3" />
                 </linearGradient>
               </defs>
+
+              {/* Wordmark base */}
               <text
                 x="50%"
-                y="142"
+                y="145"
                 textAnchor="middle"
                 fontFamily="'Plus Jakarta Sans', sans-serif"
                 fontWeight="900"
                 fontSize="175"
-                letterSpacing="-3"
-                fill="url(#convertoGradHorizontal)"
+                letterSpacing="-4"
+                fill="url(#padisaveRedGrad)"
+              >
+                MAKEON
+              </text>
+
+              {/* Wordmark top sheen overlay */}
+              <text
+                x="50%"
+                y="145"
+                textAnchor="middle"
+                fontFamily="'Plus Jakarta Sans', sans-serif"
+                fontWeight="900"
+                fontSize="175"
+                letterSpacing="-4"
+                fill="url(#padisaveHorizGrad)"
+                style={{ mixBlendMode: "screen" }}
               >
                 MAKEON
               </text>
@@ -823,7 +891,7 @@ export default function MakeonSwissV2() {
         </div>
       </footer>
 
-      {/* Floating Mobile Quick Action Bar */}
+
       <div className="sw-mobile-bar" aria-label="Mobile quick actions">
         <a className="sw-mob-call" href="tel:+919840053359">
           📞 CALL +91 98400 53359

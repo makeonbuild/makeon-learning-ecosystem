@@ -1601,7 +1601,7 @@ h2 {
   line-height: 1.7;
 }
 
-footer {
+footer.site-footer {
   display: grid;
   grid-template-columns: 1.1fr .9fr .6fr;
   gap: 5vw;
@@ -1753,7 +1753,7 @@ footer small {
   .pathway-intro, .room-wall, .student-photo-panel { border-right: 0; border-bottom: 1px solid #41506a; }
   .programme-card { grid-template-columns: 52px 1fr; }
   .programme-detail, .programme-evidence { grid-column: 2 / -1; }
-  footer { grid-template-columns: 1fr; }
+  footer.site-footer { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 620px) {

@@ -121,12 +121,42 @@ const programmes = [
 ];
 
 const publications = [
-  ["Position Paper", "Why Builder Learning, Why Now", "The case for helping children move from content familiarity to usable capability."],
-  ["Programme Guide", "The Makeon Builder Pathway", "The step-by-step learning architecture behind Makeon sessions and portfolios."],
-  ["Institutional Brief", "Makeon for Schools and Centres", "How Makeon can be adopted in schools, learning centres and enrichment contexts."],
-  ["Facilitator Note", "Questions That Build Thinking", "How mentors guide learners without turning making into passive instruction."],
-  ["Parent Note", "What Progress Looks Like", "A plain-language guide to understanding confidence, evidence and growth."],
-  ["Assessment Note", "Portfolio Evidence in Builder Learning", "How learner work can be documented without reducing it to marks alone."],
+  {
+    code: "DOC-01",
+    type: "Position Paper",
+    title: "Why Builder Learning, Why Now",
+    desc: "The case for helping children move from content familiarity to usable capability.",
+  },
+  {
+    code: "DOC-02",
+    type: "Programme Guide",
+    title: "The Makeon Builder Pathway",
+    desc: "The step-by-step learning architecture behind Makeon sessions and portfolios.",
+  },
+  {
+    code: "DOC-03",
+    type: "Institutional Brief",
+    title: "Makeon for Schools and Centres",
+    desc: "How Makeon can be adopted in schools, learning centres and enrichment contexts.",
+  },
+  {
+    code: "DOC-04",
+    type: "Facilitator Note",
+    title: "Questions That Build Thinking",
+    desc: "How mentors guide learners without turning making into passive instruction.",
+  },
+  {
+    code: "DOC-05",
+    type: "Parent Note",
+    title: "What Progress Looks Like",
+    desc: "A plain-language guide to understanding confidence, evidence and growth.",
+  },
+  {
+    code: "DOC-06",
+    type: "Assessment Note",
+    title: "Portfolio Evidence in Builder Learning",
+    desc: "How learner work can be documented without reducing it to marks alone.",
+  },
 ];
 
 const faqs = [
@@ -138,7 +168,7 @@ const faqs = [
 
 export default function MakeonSwissV2() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeBeat, setActiveBeat] = useState(1);
+  const [activeBeat, setActiveBeat] = useState(3);
   const [audience, setAudience] = useState<"institution" | "parent">("institution");
   const [submitted, setSubmitted] = useState(false);
   const [requestedDoc, setRequestedDoc] = useState<string | null>(null);
@@ -203,8 +233,8 @@ export default function MakeonSwissV2() {
           <a className="sw-nav-link" href="#philosophy" onClick={() => setMenuOpen(false)}>Philosophy</a>
           <a className="sw-nav-link" href="#programmes" onClick={() => setMenuOpen(false)}>Programmes</a>
           <a className="sw-nav-link" href="#pathway" onClick={() => setMenuOpen(false)}>The Build Loop</a>
-          <a className="sw-nav-link" href="#institutions" onClick={() => setMenuOpen(false)}>Institutions</a>
-          <a className="sw-nav-link" href="#resources" onClick={() => setMenuOpen(false)}>Resources</a>
+          <a className="sw-nav-link" href="#collaborations" onClick={() => setMenuOpen(false)}>Collaborations</a>
+          <a className="sw-nav-link" href="#resources" onClick={() => setMenuOpen(false)}>White Papers</a>
           <a className="sw-btn-nav-action" href="#enquire" onClick={() => setMenuOpen(false)}>
             <span>START ENQUIRY</span>
             <span aria-hidden="true">→</span>
@@ -293,64 +323,86 @@ export default function MakeonSwissV2() {
         </div>
       </section>
 
-      {/* SECTION 3: THE BUILD LOOP (Slide 5 Style — "Proposed Solution") */}
+      {/* ==========================================================================
+         SECTION 3: THE BUILD LOOP (REVAMPED INTEGRATED STUDIO BLUEPRINT DASHBOARD)
+         ========================================================================== */}
       <section className="sw-section" id="pathway" aria-label="The Makeon Build Loop">
         <div className="sw-section-header sw-fade-up">
-          <div className="sw-section-meta">03 // PROPOSED METHODOLOGY</div>
+          <div className="sw-section-meta">03 // PROPOSED METHODOLOGY & BLUEPRINT</div>
           <h2 className="sw-section-title">THE MAKEON BUILD LOOP</h2>
           <p style={{ color: "var(--sw-text-muted)", fontSize: "16px", maxWidth: "680px", margin: "8px 0 0" }}>
             Seven moves. Every session. Compressing the life of a real engineering project into one repeatable rhythm.
           </p>
         </div>
 
-        <div className="sw-loop-split">
-          <div className="sw-loop-steps-stack sw-fade-up">
+        <div className="sw-loop-dashboard sw-fade-up">
+          {/* Top 7-Stage Horizontal Stepper Ribbon */}
+          <div className="sw-loop-ribbon" role="tablist" aria-label="7 stages of Build Loop">
             {buildLoop.map((beat, index) => (
-              <div
+              <button
                 key={beat.name}
-                className={`sw-step-row ${activeBeat === index ? "active" : ""} ${beat.name === "Debug" ? "is-debug" : ""}`}
+                type="button"
+                role="tab"
+                aria-selected={activeBeat === index}
+                className={`sw-ribbon-step ${activeBeat === index ? "active" : ""} ${beat.name === "Debug" ? "is-debug-step" : ""}`}
                 onClick={() => setActiveBeat(index)}
               >
-                <div className="sw-step-left">
-                  <span className="sw-step-num">[{beat.number}]</span>
-                  <span className="sw-step-title">{beat.name}</span>
-                </div>
-                <span className="sw-step-cue">{beat.cue}</span>
-              </div>
+                <span className="sw-ribbon-num">[{beat.number}]</span>
+                <span className="sw-ribbon-title">{beat.name}</span>
+                <span className="sw-ribbon-cue">{beat.cue}</span>
+              </button>
             ))}
           </div>
 
-          <div className="sw-loop-detail-panel sw-fade-up sw-d-1">
-            <div className="sw-loop-panel-header">
-              <span style={{ fontFamily: "var(--sw-font-mono)", fontSize: "11px", color: "var(--sw-accent-volt)", textTransform: "uppercase", letterSpacing: "0.14em", display: "block", marginBottom: "4px" }}>
-                STAGE [{buildLoop[activeBeat].number}] SPECIFICATION
-              </span>
-              <h3>{buildLoop[activeBeat].name}</h3>
-              <p>"{buildLoop[activeBeat].cue}"</p>
+          {/* Studio Stage Detail Body */}
+          <div className="sw-loop-main-grid">
+            <div className="sw-loop-content-col">
+              <div>
+                <div className="sw-stage-badge-top">
+                  <span>STAGE [{buildLoop[activeBeat].number}] SPECIFICATION</span>
+                  <span>■ ACTIVE RHYTHM</span>
+                </div>
+                <h3 className="sw-stage-name-huge">{buildLoop[activeBeat].name}</h3>
+                <p className="sw-stage-cue-line">"{buildLoop[activeBeat].cue}"</p>
+
+                <div className="sw-roles-stacked">
+                  <div className="sw-role-card-sharp">
+                    <span>THE LEARNER OBJECTIVE</span>
+                    <p>{buildLoop[activeBeat].child}</p>
+                  </div>
+                  <div className="sw-role-card-sharp">
+                    <span>THE MENTOR PROTOCOL</span>
+                    <p>{buildLoop[activeBeat].mentor}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="sw-loop-footline">
+                <span>NOTHING DEMONSTRATED.</span>
+                <strong>EVERYTHING BUILT.</strong>
+              </div>
             </div>
 
-            <div className="sw-loop-roles">
-              <div className="sw-loop-role-box">
-                <span>THE LEARNER</span>
-                <p>{buildLoop[activeBeat].child}</p>
+            <div className="sw-loop-media-col">
+              <div className="sw-loop-media-frame">
+                <img
+                  src="/makeon-assets/student-studio-wide.png"
+                  alt="Students engineering prototypes at Makeon bench"
+                />
               </div>
-              <div className="sw-loop-role-box">
-                <span>THE MENTOR</span>
-                <p>{buildLoop[activeBeat].mentor}</p>
+              <div className="sw-evidence-overlay-card">
+                <div>
+                  <strong>Empirical Proof Gate</strong>
+                  <p>Students must demonstrate operation and defend engineering decisions.</p>
+                </div>
+                <span className="sw-evidence-badge">EVIDENCE LOGGED</span>
               </div>
-            </div>
-
-            <div className="sw-loop-img-box">
-              <img
-                src="/makeon-assets/student-studio-wide.png"
-                alt="Students testing engineering prototypes in Makeon studio"
-              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 4: PHILOSOPHY & EDUCATIONAL CASE (Slide 4 Style) */}
+      {/* SECTION 4: PHILOSOPHY & EDUCATIONAL CASE */}
       <section className="sw-section" id="philosophy">
         <div className="sw-section-header sw-fade-up">
           <div className="sw-section-meta">04 // PHILOSOPHY & RIGOR</div>
@@ -392,7 +444,7 @@ export default function MakeonSwissV2() {
         </div>
       </section>
 
-      {/* SECTION 5: PROGRAMMES (Slide 6 Style — Goals & Focus) */}
+      {/* SECTION 5: PROGRAMMES */}
       <section className="sw-section" id="programmes">
         <div className="sw-section-header sw-fade-up">
           <div className="sw-section-meta">05 // ACADEMIC PATHWAYS</div>
@@ -427,56 +479,77 @@ export default function MakeonSwissV2() {
         </div>
       </section>
 
-      {/* SECTION 6: STRATEGIC COLLABORATIONS & PUBLICATIONS (Slide 7 Style) */}
-      <section className="sw-section" id="resources">
+      {/* ==========================================================================
+         SECTION 6: STRATEGIC COLLABORATIONS (REVAMPED SHOWCASE)
+         ========================================================================== */}
+      <section className="sw-section" id="collaborations">
         <div className="sw-section-header sw-fade-up">
-          <div className="sw-section-meta">06 // COLLABORATIONS & KNOWLEDGE</div>
-          <h2 className="sw-section-title">STRATEGIC COLLABORATIONS & WHITE PAPERS</h2>
+          <div className="sw-section-meta">06 // STRATEGIC COLLABORATIONS</div>
+          <h2 className="sw-section-title">GLOBAL TECHNICAL ALLIANCE</h2>
         </div>
 
-        <div className="sw-collab-publications-split">
-          <div className="sw-collab-panel sw-fade-up">
-            <div style={{ fontFamily: "var(--sw-font-mono)", fontSize: "11px", color: "var(--sw-accent-red)", fontWeight: "800", textTransform: "uppercase", letterSpacing: "0.14em", marginBottom: "8px" }}>
-              ACTIVE STRATEGIC ALLIANCE
-            </div>
+        <div className="sw-collab-showcase-box sw-fade-up">
+          <div>
+            <div className="sw-collab-meta-badge">ACTIVE STRATEGIC ALLIANCE // TIER 01</div>
             <h3>INNOINTEL GLOBAL</h3>
-            <p>
-              Technical collaboration in product engineering, design and Academy course delivery.
-            </p>
-            <div style={{ borderTop: "1px solid var(--sw-line-dark)", paddingTop: "16px", marginTop: "16px" }}>
-              <span style={{ fontFamily: "var(--sw-font-mono)", fontSize: "11px", color: "var(--sw-text-muted)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                STATUS: DEPLOYED & ACTIVE
-              </span>
-            </div>
+            <span style={{ fontFamily: "var(--sw-font-mono)", fontSize: "11px", color: "#888888", textTransform: "uppercase", letterSpacing: "0.12em", display: "block", marginBottom: "8px" }}>
+              COLLABORATION CODE: INNO-MAKEON-2026
+            </span>
           </div>
 
-          <div className="sw-resource-list sw-fade-up sw-d-1">
-            {publications.map((doc) => (
-              <div key={doc[1]} className="sw-resource-item">
-                <div>
-                  <span style={{ fontFamily: "var(--sw-font-mono)", fontSize: "9.5px", color: "var(--sw-accent-red)", fontWeight: "800", textTransform: "uppercase", letterSpacing: "0.1em", display: "block", marginBottom: "4px" }}>
-                    {doc[0]}
-                  </span>
-                  <h4>{doc[1]}</h4>
-                  <p>{doc[2]}</p>
-                </div>
-                <button
-                  type="button"
-                  className="sw-resource-btn"
-                  onClick={() => handleDocRequest(doc[1])}
-                >
-                  REQUEST DOCUMENT [↗]
-                </button>
-              </div>
-            ))}
+          <div>
+            <p>
+              Technical collaboration in product engineering, industrial design, and Academy course delivery across institutions.
+            </p>
+            <div className="sw-collab-pill-tags">
+              <span className="sw-tag-item">PRODUCT ENGINEERING</span>
+              <span className="sw-tag-item">INDUSTRIAL DESIGN</span>
+              <span className="sw-tag-item">ACADEMY COURSE DELIVERY</span>
+              <span className="sw-tag-item" style={{ borderColor: "var(--sw-accent-volt)", color: "var(--sw-accent-volt)" }}>STATUS: ACTIVE</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 7: QUESTIONS LEADERS ASK (FAQ) */}
+      {/* ==========================================================================
+         SECTION 7: EXECUTIVE RESEARCH ARCHIVE / WHITE PAPERS (REVAMPED 3-COL)
+         ========================================================================== */}
+      <section className="sw-section" id="resources">
+        <div className="sw-section-header sw-fade-up">
+          <div className="sw-section-meta">07 // RESEARCH ARCHIVE & PUBLICATIONS</div>
+          <h2 className="sw-section-title">WHITE PAPERS & INSTITUTIONAL BRIEFS</h2>
+          <p style={{ color: "var(--sw-text-muted)", fontSize: "16px", maxWidth: "680px", margin: "8px 0 0" }}>
+            The theoretical architecture, pedagogical models, and assessment methodologies behind Makeon.
+          </p>
+        </div>
+
+        <div className="sw-publications-3col">
+          {publications.map((doc, idx) => (
+            <article key={doc.code} className={`sw-pub-card-sharp sw-fade-up sw-d-${(idx % 3) + 1}`}>
+              <div>
+                <div className="sw-pub-top-meta">
+                  <span className="sw-pub-type">{doc.type}</span>
+                  <span className="sw-pub-code">{doc.code}</span>
+                </div>
+                <h4>{doc.title}</h4>
+                <p>{doc.desc}</p>
+              </div>
+              <button
+                type="button"
+                className="sw-pub-action-btn"
+                onClick={() => handleDocRequest(doc.title)}
+              >
+                REQUEST DOCUMENT [↗]
+              </button>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 8: QUESTIONS LEADERS ASK (FAQ) */}
       <section className="sw-section">
         <div className="sw-section-header sw-fade-up">
-          <div className="sw-section-meta">07 // FAQ & DUE DILIGENCE</div>
+          <div className="sw-section-meta">08 // FAQ & DUE DILIGENCE</div>
           <h2 className="sw-section-title">QUESTIONS LEADERS ASK</h2>
         </div>
 
@@ -494,13 +567,13 @@ export default function MakeonSwissV2() {
         </div>
       </section>
 
-      {/* SECTION 8: READINESS ASSESSMENT (Slide 8 Style) */}
+      {/* SECTION 9: READINESS ASSESSMENT */}
       <section className="sw-section sw-enquire-section" id="enquire">
         <div className="sw-section-header sw-fade-up">
-          <div className="sw-section-meta">08 // READINESS EVALUATION</div>
+          <div className="sw-section-meta">09 // READINESS EVALUATION</div>
           <h2 className="sw-section-title">START THE CONVERSATION</h2>
           <p style={{ color: "#aaaaaa", fontSize: "16px", maxWidth: "680px", margin: "8px 0 0" }}>
-            Select your organization profile below to initiate a tailored academic evaluation.
+            Select your profile below to initiate a structured academic evaluation.
           </p>
         </div>
 
@@ -649,49 +722,77 @@ export default function MakeonSwissV2() {
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="sw-footer">
-        <div className="sw-footer-grid">
-          <div className="sw-footer-brand">
-            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-              <div className="sw-brand-icon" style={{ background: "#ffffff", color: "#000000" }}>M</div>
-              <strong style={{ fontFamily: "var(--sw-font-mono)", fontSize: "20px", letterSpacing: "0.14em" }}>
-                MAKEON
-              </strong>
-            </div>
+      {/* ==========================================================================
+         FOOTER (EXACT MATCH WITH REFERENCE CONVERTO DESIGN)
+         ========================================================================== */}
+      <footer className="sw-footer-converto">
+        <div className="sw-footer-top-grid">
+          {/* Brand Col */}
+          <div className="sw-footer-brand-col">
+            <h2>MAKEON</h2>
             <p>
-              We build builder development infrastructure that empowers learners, strengthens institutions and transforms communities.
+              Makeon is India’s builder development infrastructure, partnering with schools, learning centres and families to build real capability through hands-on engineering.
             </p>
-            <span style={{ fontFamily: "var(--sw-font-mono)", fontSize: "11px", color: "var(--sw-accent-volt)", textTransform: "uppercase", letterSpacing: "0.14em" }}>
-              BUILDING THE NEXT GENERATION OF BUILDERS.
-            </span>
           </div>
 
-          <div className="sw-footer-col">
-            <h4>QUICK NAVIGATION</h4>
-            <a href="#who">Who We Are</a>
-            <a href="#philosophy">Philosophy</a>
-            <a href="#pathway">The Build Loop</a>
-            <a href="#institutions">For Institutions</a>
-            <a href="#resources">Strategic Collaborations</a>
-            <a href="#programmes">Programmes</a>
+          {/* Quick Links */}
+          <div className="sw-footer-nav-col">
+            <h4>Quick Links</h4>
+            <nav>
+              <a href="#top">Home</a>
+              <a href="#who">About Us</a>
+              <a href="#pathway">Build Loop</a>
+              <a href="#enquire">Contact Us</a>
+            </nav>
           </div>
 
-          <div className="sw-footer-col sw-footer-contact">
-            <h4>CONTACT SPECIFICATION</h4>
+          {/* Programmes */}
+          <div className="sw-footer-nav-col">
+            <h4>Programmes</h4>
+            <nav>
+              <a href="#programmes">Grades 6–9</a>
+              <a href="#programmes">Grade 11 Studio</a>
+              <a href="#programmes">Institutions</a>
+              <a href="#resources">Curriculum</a>
+            </nav>
+          </div>
+
+          {/* Research */}
+          <div className="sw-footer-nav-col">
+            <h4>Research</h4>
+            <nav>
+              <a href="#resources">White Papers</a>
+              <a href="#resources">Case Studies</a>
+              <a href="#collaborations">Partnerships</a>
+              <a href="#philosophy">Methodology</a>
+            </nav>
+          </div>
+
+          {/* Contact Specification */}
+          <div className="sw-footer-contact-col">
+            <h4 style={{ color: "#ffffff", fontFamily: "var(--sw-font-mono)", fontSize: "13px", margin: "0 0 16px" }}>
+              Contact
+            </h4>
             <address>
-              <span>Rtn Prasanth Deenadayal</span><br />
-              <span>330 Thambu Chetty Street,</span><br />
-              <span>Pandu Kita Plaza, 2nd Floor,</span><br />
-              <span>Chennai, Tamil Nadu 600001</span><br />
-              <a href="tel:+919840053359">+91 98400 53359</a><br />
+              <span>Rtn Prasanth Deenadayal</span>
+              <span>330 Thambu Chetty Street,</span>
+              <span>Pandu Kita Plaza, 2nd Floor,</span>
+              <span>Chennai 600001</span>
+              <a href="tel:+919840053359">+91 98400 53359</a>
               <a href="mailto:prasanth@makeon.build">prasanth@makeon.build</a>
             </address>
           </div>
         </div>
 
-        <div className="sw-footer-bottom">
-          <span>© 2026 MAKEON TECHNOLOGIES PRIVATE LIMITED. ALL RIGHTS RESERVED. ZERO ROUNDED EDGES. ARCHITECTURAL RIGOR.</span>
+        {/* Middle Metadata Rule */}
+        <div className="sw-footer-meta-row">
+          <span>© 2026 Makeon Technologies Private Limited. All rights reserved.</span>
+          <span>Building the next generation of builders.</span>
+        </div>
+
+        {/* Giant Submerged Brand Typography (Exact CONVRTO Style) */}
+        <div className="sw-footer-submerged-logo" aria-hidden="true">
+          <span className="sw-giant-wordmark">MAKEON</span>
         </div>
       </footer>
 
